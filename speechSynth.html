@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Speech Synth Browser API</title>
+	<script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+<body>
+	<!--<button onclick="speak('Merry Christmas, ya filthy Animals')">Say It</button>-->
+	<img src="https://i.imgur.com/pyk0eKp.gif"  onclick="speak('Merry Christmas, ya filthy Animal!')" />
+</body>
+</html>
+
+<script type="text/babel">
+	const speak = message => {
+	  const msg = new SpeechSynthesisUtterance(message);
+	  msg.voice = window.speechSynthesis.getVoices()[0];
+	  window.speechSynthesis.speak(msg);
+	};
+	// speak('Hello, World') -> plays the message
+</script>
